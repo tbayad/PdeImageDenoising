@@ -119,7 +119,7 @@ class PeronaMalikDiffusion:
         plt.axis('off')
         plt.show()
 
-    def plot_evolution(self, ncols=5):
+    def plot_evolution(self, id, type, ncols=5):
         n = len(self.history)
         nrows = int(np.ceil(n / ncols))
 
@@ -128,7 +128,7 @@ class PeronaMalikDiffusion:
             edges = self.compute_edges(img)
             plt.subplot(nrows, ncols, i + 1)
             plt.imshow(edges, cmap='gray')
-            plt.title(f"{i}")
+            plt.title(f"id: {id}, noise type: {type}, iter: {i}")
             plt.axis('off')
         plt.tight_layout()
         plt.show()
