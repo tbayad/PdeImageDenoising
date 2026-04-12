@@ -1,5 +1,5 @@
 
-# PDE Image Denoising - Perona-Malik Diffusion
+# Perona–Malik Diffusion for Edge-Preserving Image Denoising
 
 A Python implementation of the Perona-Malik anisotropic diffusion algorithm for image denoising using partial differential equations. Includes evaluation on multiple noise types (Gaussian, salt-and-pepper, speckle).
 

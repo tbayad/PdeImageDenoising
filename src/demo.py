@@ -71,7 +71,7 @@ def main() -> None:
             buf.seek(0)
             frames.append(imageio.v2.imread(buf))
 
-        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, fps=3, loop=0)
+        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, fps=10, loop=0)
 
 
 if __name__ == "__main__":
