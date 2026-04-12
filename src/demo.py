@@ -45,29 +45,33 @@ def main() -> None:
 
 
         ig, ax = plt.subplots()
-        ax.imshow(pm.compute_edges(noisy), cmap='gray')
-        ax.axis('off')
+        plt.figure(figsize=(4,4))
+        plt.imshow(pm.compute_edges(noisy), cmap="gray")
+        plt.axis("off")
+
         buf = BytesIO()
-        plt.savefig(buf, format='png', bbox_inches='tight', pad_inches=0)
+        plt.savefig(buf, format="png", bbox_inches="tight", pad_inches=0)
         plt.close()
 
         buf.seek(0)
-        frames.append(imageio.imread(buf))
+        frames.append(imageio.v2.imread(buf))
 
 
         for image in pm.history:
-            image = pm.compute_edges(image)
-            ig, ax = plt.subplots()
-            ax.imshow(image, cmap='gray')
-            ax.axis('off')
+            frame = pm.compute_edges(image)
+    
+            plt.figure(figsize=(4,4))
+            plt.imshow(frame, cmap="gray")
+            plt.axis("off")
 
             buf = BytesIO()
-            plt.savefig(buf, format='png', bbox_inches='tight', pad_inches=0)
+            plt.savefig(buf, format="png", bbox_inches="tight", pad_inches=0)
             plt.close()
 
             buf.seek(0)
-            frames.append(imageio.imread(buf))
-        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, duration=0.9)
+            frames.append(imageio.v2.imread(buf))
+
+        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, fps=3, loop=0)
 
 
 if __name__ == "__main__":

@@ -25,7 +25,7 @@ The following animations demonstrate the iterative diffusion process on sample i
     </td>
     <td align="center">
       <img src="gifs/diffusion_3.gif" width="250"/><br>
-      <em>Sample 4: Multi-noise denoising</em>
+      <em>Sample 4: Speckle denoising</em>
     </td>
   </tr>
 </table>
