@@ -29,7 +29,7 @@ def main() -> None:
     lambda_ = 20
     sigma = 1
     stepsize = 0.2
-    n_steps = 5
+    n_steps = 15
     
     noisy_images = [noisy_images[6], noisy_images[3], noisy_images[2], noisy_images[8]]
     for i, noisy in enumerate(noisy_images):
@@ -71,7 +71,7 @@ def main() -> None:
             buf.seek(0)
             frames.append(imageio.v2.imread(buf))
 
-        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, fps=10, loop=0)
+        imageio.mimsave(f"gifs/diffusion_{i}.gif", frames, fps=6, loop=0)
 
 
 if __name__ == "__main__":
