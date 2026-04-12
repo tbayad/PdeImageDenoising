@@ -70,7 +70,7 @@ def apply_diffusion(
             n_steps=n_steps,
         )
         pm.run(verbose=False)
-        pm.plot_evolution(sample.image_id, sample.noise_type)
+        # pm.plot_evolution(sample.image_id, sample.noise_type)
         denoised_image = pm.history[-1]
         sample.update_denoised(denoised_image)
 
